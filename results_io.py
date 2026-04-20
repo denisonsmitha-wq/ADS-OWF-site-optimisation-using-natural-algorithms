@@ -1,27 +1,6 @@
 # =============================================================================
 # results_io.py
 # Shared CSV export helpers for the BA1, GWO, WOA and PSO wind-farm scripts.
-#
-# Writes four CSVs per run-batch into ./results/, all timestamped so that
-# reruns do not overwrite each other.  All four algorithms write the same
-# schema, so the downstream stats / plotting notebook can concatenate
-# across algorithms without special-casing.
-#
-# Schemas:
-#   <ALGO>_summary_<ts>.csv
-#       algorithm, run, lcoe, runtime_s, evaluations, best_lon, best_lat
-#
-#   <ALGO>_convergence_<ts>.csv
-#       eval_index, run_1, run_2, ..., run_N
-#       (best-so-far LCOE after each evaluation; NaN-padded to longest run)
-#
-#   <ALGO>_search_points_<ts>.csv
-#       algorithm, run, eval_index, lon, lat, lcoe
-#       (every objective call made by the algorithm — useful for density maps)
-#
-#   <ALGO>_archive_<ts>.csv
-#       algorithm, run, lon, lat, lcoe
-#       (secondary optima archive — full archive for BA1, single best for others)
 # =============================================================================
 
 from __future__ import annotations
