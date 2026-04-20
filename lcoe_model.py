@@ -1,18 +1,6 @@
 # =============================================================================
 # lcoe_model_corrected.py
-# APPROACH 2 — Corrected first-principles LCOE model
 #
-# This is an improved version of the original lcoe_model_wind.py that fixes
-# the identified issues:
-#
-#   1. ADDED: Turbine supply cost (was completely missing from CAPEX)
-#   2. ADDED: Decommissioning provision
-#   3. ADDED: Combined energy loss factor (availability, wake, electrical)
-#   4. UPDATED: Foundation substrate multipliers now use BGS 250k Folk
-#      classification (16 categories) via seabed_foundation.py
-#   5. KEPT: Same modular structure and API as lcoe_model_wind.py
-#
-# Drop-in replacement — exposes compute_lcoe(lon, lat) and lcoe_breakdown(lon, lat).
 # =============================================================================
 
 from __future__ import annotations
