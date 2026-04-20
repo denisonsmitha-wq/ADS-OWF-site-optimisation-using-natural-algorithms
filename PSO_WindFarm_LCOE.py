@@ -3,15 +3,6 @@
 # Particle Swarm Optimisation (PSO) for offshore wind farm siting.
 # Minimises LCOE over the North Sea by optimising (longitude, latitude).
 #
-# Drop-in replacement for BA1_WindFarm_LCOE_wind_stats.py — uses the same
-# LCOE model, spatial data, wind resource, plotting and summary statistics.
-#
-# References:
-#   Kennedy & Eberhart (1995) "Particle Swarm Optimization"
-#   Shi & Eberhart (1998) linearly decreasing inertia weight
-#
-# Author: generated for Arthur Denison-Smith's BA1 optimisation project
-#
 # Fixes applied:
 #   Fix 1 — gbest_pos initialised to a random in-bounds position rather than
 #            None.  If the entire initial swarm is infeasible (all inf), the
