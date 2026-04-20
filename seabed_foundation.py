@@ -1,34 +1,15 @@
 # =============================================================================
 # seabed_foundation.py
-# Seabed substrate lookup from the BGS 250k Seabed Sediments ESRI Shapefile,
-# with foundation-cost multipliers for bottom-fixed offshore wind farms.
+# Seabed substrate lookup from the BGS 250k Seabed Sediments ESRI Shapefile, with foundation-cost multipliers for bottom-fixed offshore wind farms.
 #
 # Uses the BGS_250k_SeaBedSediments_WGS84_v3 shapefile with the FOLK_S field
-# (Folk classification short code) to determine seabed substrate type.
 #
 # 16 Folk sediment classes are mapped to continuous cost multipliers reflecting
-# the relative difficulty of monopile installation:
-#   - Sand-dominated: easiest driving, good bearing capacity (1.00–1.07)
-#   - Gravel-influenced: higher driving resistance, scour risk (1.12–1.22)
-#   - Mud-dominated: low bearing capacity, longer piles needed (1.15–1.28)
-#   - Rock/diamicton: may require drilling, significant premium (1.40)
-#
-# Public API
-# ----------
-#   load_seabed(shp_dir)          — pre-load the shapefile (called once)
-#   get_substrate(lon, lat)       — return Folk code string at a point
-#   foundation_cost_multiplier(lon, lat)
-#                                  — return a dimensionless cost multiplier
-#   compute_foundation_cost_per_mw(depth_m, lon, lat)
-#                                  — £M/MW including substrate adjustment
-#
-# The module is designed to drop straight into the existing LCOE pipeline:
-#   lcoe_model_corrected.py  →  calls compute_foundation_cost_per_mw()
 #
 # Data source: BGS Seabed Sediments 250k v3 (British Geological Survey, 2024)
 #   https://www.bgs.ac.uk/download/offshore-seabed-sediments-250k-gis-shapefile-format/
 #
-# Authors: Arthur Denison-Smith — BA1 optimisation project (ECM3175)
+# Author: Arthur Denison-Smith
 # =============================================================================
 
 from __future__ import annotations
