@@ -1,16 +1,6 @@
 # =============================================================================
 # wind_energy.py
 # Wind resource utilities for offshore wind farm siting.
-#
-# - Loads an ERA5-style NetCDF that contains u100 and v100 (m/s) on a lat/lon grid
-#   with a time dimension (hourly).
-# - Pre-computes and caches the *time-mean wind-speed magnitude* at 100 m:
-#       mean_speed(lat, lon) = mean_t( sqrt(u100^2 + v100^2) )
-# - Provides fast lookups of the area-mean wind speed in a 50 km "square" around a
-#   candidate site (to mirror calculateEnergy.m).
-#
-# This module is designed to be called thousands of times from an optimisation
-# loop (e.g. Bees Algorithm) without repeatedly loading the NetCDF.
 # =============================================================================
 
 from __future__ import annotations
