@@ -3,8 +3,7 @@
 # Whale Optimisation Algorithm for offshore wind farm siting.
 # Minimises LCOE over the North Sea by optimising (longitude, latitude).
 #
-# Adapted from EvoloPy WOA (Hossam Faris) to work with the same LCOE pipeline
-# and output format as BA1_WindFarm_LCOE_wind_stats.py.
+# Adapted from EvoloPy WOA
 #
 # Fixes applied:
 #   Fix 1 — Leader_pos initialised to a random position within bounds rather
