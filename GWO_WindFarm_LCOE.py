@@ -3,8 +3,7 @@
 # Grey Wolf Optimiser for offshore wind farm siting.
 # Minimises LCOE over the North Sea by optimising (longitude, latitude).
 #
-# Adapted from EvoloPy GWO (Hossam Faris) to work with the same LCOE pipeline
-# and output format as BA1_WindFarm_LCOE_wind_stats.py.
+# Adapted from EvoloPy GWO
 #
 # Fixes applied:
 #   Fix 1 — Alpha/Beta/Delta_pos initialised to random positions within bounds
