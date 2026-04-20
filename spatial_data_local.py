@@ -3,7 +3,6 @@
 # Handles spatial lookups:
 #   - Bathymetry (GEBCO NetCDF)
 #   - Distance to nearest port (simple planar approximation)
-#
 # =============================================================================
 
 from __future__ import annotations
