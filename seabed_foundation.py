@@ -42,26 +42,25 @@ FOUNDATION_DEPTH_COEFF      = 0.012  # £M / MW per metre deviation from 30 m
 # =============================================================================
 SUBSTRATE_COST_MULTIPLIERS: dict[str, float] = {
     # --- Sand-dominated (easiest installation) ---
-    "S":     1.00,   # Sand — reference case, easiest monopile driving
-    "(g)S":  1.00,   # Slightly gravelly sand — negligible gravel content
-    "mS":    1.00,   # Muddy sand — slightly reduced bearing capacity
-    "(g)mS": 1.00,   # Slightly gravelly muddy sand — mixed but sand-dominated
+    "S":     1.00,   
+    "(g)S":  1.02,   
+    "mS":    1.04,   
+    "(g)mS": 1.06,   
 
     # --- Gravel-influenced (higher driving resistance, scour risk) ---
-    "gS":    1.00,   # Gravelly sand — significant gravel, larger hammer needed
-    "gmS":   1.00,   # Gravelly muddy sand — mixed, moderate driving difficulty
-    "sG":    1.00,   # Sandy gravel — gravel-dominated, pile refusal risk
-    "msG":   1.00,   # Muddy sandy gravel — variable resistance
-    "mG":    1.00,   # Muddy gravel — high resistance, some cohesion from mud
-    "G":     1.22,   # Gravel — high driving resistance, possible pre-drilling
+    "gS":    1.06,   
+    "gmS":   1.08,   
+    "sG":    1.12,   
+    "msG":   1.17,   
+    "mG":    1.20,  
+    "G":     1.22,   
 
     # --- Mud-dominated (low bearing capacity, longer piles) ---
-    "(g)sM": 1.00,   # Slightly gravelly sandy mud — reduced bearing capacity
-    "sM":    1.00,   # Sandy mud — significant pile length increase
-    "(g)M":  1.00,   # Slightly gravelly mud — long piles, heavy transition piece
-    "gM":    1.00,   # Gravelly mud — unpredictable driving, pile deviation risk
-    "M":     1.00,   # Mud — lowest bearing capacity, longest piles needed
-
+    "(g)sM": 1.15,  
+    "sM":    1.18,  
+    "(g)M":  1.22,   
+    "gM":    1.25,   
+    "M":     1.28,   
 }
 
 # Fallback if query point is outside shapefile coverage or code not recognised
